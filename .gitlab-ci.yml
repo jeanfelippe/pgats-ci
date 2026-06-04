@@ -1,7 +1,7 @@
 # CI de Nível 01 - Disparo Manual através de clique
 
 # Imagem Docker oficial do Playwright (já vem com Node, Yarn e os Browsers instalados)
-image: mcr.microsoft.com/playwright:v1.49.0-noble
+image: mcr.microsoft.com/playwright:v1.60.0-noble
 
 # Definição das etapas da pipeline
 stages:
