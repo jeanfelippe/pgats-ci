@@ -1,0 +1,26 @@
+# CI de Nível 01 - Disparo Manual através de clique
+
+# Imagem Docker oficial do Playwright (já vem com Node, Yarn e os Browsers instalados)
+image: mcr.microsoft.com/playwright:v1.49.0-noble
+
+# Definição das etapas da pipeline
+stages:
+  - test
+
+# Definição do Job
+e2e-tests:
+  stage: test
+  
+  # Passos executados dentro do job
+  script:
+    # O clone do projeto (checkout) já é feito automaticamente pelo GitLab
+    
+    # Instalação das dependências do seu projeto usando o Yarn
+    - yarn install
+    
+    # Execução dos testes e2e
+    - yarn run e2e
+
+  # Regras de disparo (Gatilho Manual)
+  rules:
+    - when: manual
