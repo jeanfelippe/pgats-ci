@@ -42,3 +42,6 @@ jobs:
             # executar os testes e2e
             - name: Executando testes e2e
               run: yarn run e2e
+
+              - name: Super-Linter
+              uses: super-linter/super-linter@v8.6.0
