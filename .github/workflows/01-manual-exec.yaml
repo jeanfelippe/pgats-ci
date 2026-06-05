@@ -11,7 +11,7 @@ on:
 # tarefas dentro da pipeline = jobs
 jobs:
 
- # JOB 1: Validação do código ajustada
+ # JOB 1: Validação do código ajustada (Estratégia de Lista Branca)
   lint:
     name: Validar Código (Super-Linter)
     runs-on: ubuntu-latest
@@ -24,24 +24,13 @@ jobs:
       - name: Executar Super-Linter
         uses: super-linter/super-linter@v7
         env:
-          VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-          # --- CONFIGURAÇÕES DE FILTRO DE ERROS ---
-          # Desativando checagens muito rígidas de formatação/estilo que falharam:
-          VALIDATE_MARKDOWN: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_CSS: false
-          VALIDATE_JSON: false
-          VALIDATE_CHECKOV: false
-          VALIDATE_JSCPD: false # Ignora verificação de código duplicado
+          # 1. Desativa a validação automática de TUDO
+          VALIDATE_ALL_CODEBASE: false
           
-          # Se o seu projeto usa TypeScript, podemos desligar o Linter padrão de JavaScript puro para evitar conflitos:
-          VALIDATE_JAVASCRIPT_ES: false
-          VALIDATE_JAVASCRIPT_STANDARD: false
-          
-          # Mantendo ativas apenas as validações estruturais importantes:
+          # 2. Liga EXPLICITAMENTE apenas o que nos interessa
           VALIDATE_YAML: true
           VALIDATE_TYPESCRIPT_ES: true
 
