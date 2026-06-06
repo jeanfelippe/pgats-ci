@@ -37,7 +37,9 @@ jobs:
   # JOB 2: Seu teste e2e atual
   e2e-tests:
     name: Executando testes e2e
-    runs-on: ubuntu-latest
+    # ALTERADO AQUI: Em vez de ubuntu-latest, aponta para a sua máquina
+    runs-on: self-hosted
+    #runs-on: ubuntu-latest
     needs: lint # Crucial: Diz que este job só inicia se o job "lint" passar com sucesso!
 
     # passos do job
