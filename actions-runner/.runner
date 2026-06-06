@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 22,
+  "agentName": "DESKTOP-89FF1E3",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus2.actions.githubusercontent.com/tDkJzJTq92GJNFChkz0P3aIJkNV802opHukFrzSqrFus3Ctr7s/",
+  "gitHubUrl": "https://github.com/jeanfelippe/pgats-ci",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
